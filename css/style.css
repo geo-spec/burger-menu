@@ -39,4 +39,8 @@ html, body{
 .header__body {
     position: relative;
     z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
 }
