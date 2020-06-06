@@ -34,10 +34,10 @@ html, body{
     width: 100%;
     height: 100%;
     background-color: #5e5373;
+    z-index: 2;
 }
 .header__body {
     position: relative;
-    z-index: 2;
     display: flex;
     justify-content: space-between;
     height: 80px;
@@ -47,6 +47,8 @@ html, body{
     flex: 0 0 60px;
     border-radius: 50%;
     overflow: hidden;
+    position: relative;
+    z-index: 3;
 }
 .header__logo img {
     max-width: 100%;
@@ -59,11 +61,19 @@ html, body{
 }
 
 @media (max-width:767px) {
+    .header__body {
+        height: 50px;
+    }
+    .header__logo {
+        flex: 0 0 40px;
+    }
     .header__burger {
         display: block;
         position: relative;
         width: 30px;
         height: 20px;
+        position: relative;
+        z-index: 3;
     }
     .header__burger span {
         position: absolute;
@@ -89,6 +99,15 @@ html, body{
     .header__burger:after{
         bottom: 0;
     }
+
+    .header__menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #18b5a4;
+    }
 }
 
 .header__list {
@@ -106,6 +125,8 @@ html, body{
 .header__list li {
     list-style: none;
     margin: 0px 0px 0px 20px;
+    z-index: 1;
+    /* my */
 }
 .content {
     padding: 100px 0 0 0;
