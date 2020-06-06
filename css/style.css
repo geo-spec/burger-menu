@@ -52,9 +52,32 @@ html, body{
     max-width: 100%;
     display: block;
 }
+
+.header__burger {
+    display: none;
+
+}
+
+@media (max-width:767px) {
+    .header__burger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+    }
+    .header__burger:before,
+    .header__burger:after {
+        content: '';
+        background-color: #ffffff;
+        position: absolute;
+    }
+}
+
 .header__list {
     display: flex
 }
+
+
 .header__link {
     color: #ffffff;
     text-transform: uppercase;
