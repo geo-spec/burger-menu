@@ -77,7 +77,6 @@ html, body{
     list-style: none;
     margin: 0px 0px 0px 20px;
     z-index: 1;
-    /* my */
 }
 .content {
     padding: 100px 0 0 0;
@@ -92,6 +91,12 @@ html, body{
 
 
 @media (max-width:767px) {
+    body.lock {
+        overflow: hidden;
+    }
+    .content {
+        padding: 70px 0 0 0;
+    }
     .header__body {
         height: 50px;
     }
@@ -112,7 +117,8 @@ html, body{
         left: 0;
         width: 100%;
         height: 2px;
-        top: 9px
+        top: 9px;
+        transition: all 0.3s ease 0s;
     }
     .header__burger:before,
     .header__burger:after {
@@ -122,26 +128,53 @@ html, body{
         width: 100%;
         height: 2px;
         left: 0;
+        transition: all 0.3s ease 0s;
     }
 
-    .header__burger:before{
+    .header__burger:before {
         top: 0;
     }
-    .header__burger:after{
+    .header__burger:after {
         bottom: 0;
+    }
+    .header__burger.active {
+        height: 12px;
+    }
+    .header__burger.active span {
+        transform: scale(0);
+    }
+
+    .header__burger.active:before {
+        transform: rotate(45deg);
+        top: 9px;
+    }
+    .header__burger.active:after {
+        transform: rotate(-45deg);
+        bottom: 9;
     }
 
     .header__menu {
         position: fixed;
-        top: 0;
+        top: -100%;
         left: 0;
         width: 100%;
         height: 100%;
+        overflow: auto;
+        transition: all 0.3s ease 0s;
         background-color: #18b5a4;
-        padding: 70px 0 0 0;
+        padding: 70px 10px 20px 10px;
+    }
+    .header__menu.active {
+        top: 0;
     }
     .header__list {
         display: block;
+    }
+    .header__list li {
+        margin: 0 0 20px 0;
+    }
+    .header__link {
+        font-size: 22px;
     }
     
 }
